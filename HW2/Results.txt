@@ -1,0 +1,2 @@
+The face masks have been successfully generated, and in the Task 3 (with help from internet) resulting graph shows 
+the concentration and dependency for skin colors, based on the 8 faces analyzed.
