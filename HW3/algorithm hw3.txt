@@ -1,0 +1,41 @@
+Initial Algorithm:
+
+Step 1: Ran the threshold program provided
+Step 2: Make binary
+Step 3: Apply Gaussian Blur with radius >=10 (removes eyes and mouth region)
+Step 4: Make binary
+
+Step 5: Erosion as many times as needed to remove all regions except the main facial region
+Step 6: Dilate as many times as erosion is applied (after trying I think needs to be couple of times more, to recover some lost area after blurring)
+
+Step 7: Adjust threshold (not very sure why this is done on binary image, but in one case the next step didn't work if this was skipped)
+Step 8: Analyze Particles, 0-Infinity, 0-1, Ellipses display exclude clear
+Step 9: Get the oval parameters
+Step 10: Open the original image to apply and test
+
+
+Results: 
+
+81-11 (231, 107, 183, 222)_ gaussian blur with 15 twice, 70 erosion to separate neck from face, not as satisfied with the result
+
+82-11 (213, 91, 204, 358) _ blur 30, 1 erosion, 2 times dilute, decided to keep the neck part, not very good (didn't get the ears)
+
+83-11 (197, 73, 232, 209) _ blur 40, 1 erosion, 2 dilute, quite nice outline, need to dilute more, after 40 blur
+
+84-11 (207, 65, 228, 289) _ blur 40, 3 dilute, not bad, includes ear and neck parts, not sure if it would be better to dilute 2 times
+
+85-11 (219, 69, 218, 307) _ blur 25, 37 erosion, 39 dilute, doesn't fully include the ears, overall not bad
+
+86-11  (192, 75, 223, 262) _ blur 30, dilute 3 times, great outline
+
+87-11 (249, 81, 186, 291) _ blur 10, pretty good outline (erosion, dilate 17 times)
+
+88-11 (206, 81, 232, 395) _ blur 25, dilute 2, included neck, couldn't take the ear section
+
+Conclusions:
+
+Didn't have enough time to experiment and define clearer algorithm
+For the erosion step can leave the neck if attached
+Have a hard time including the ears
+Worked better on photos of women than men
+
